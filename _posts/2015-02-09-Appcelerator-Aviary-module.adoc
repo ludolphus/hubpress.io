@@ -1,0 +1,15 @@
+# Appcelerator Aviary module
+
+For many years Aviary has been offering a great photo editor as an SDK. In December 2014 the Aviary editor was accuired by Adobe and integrated in the Adobe Creative SDK currently at https://blog.creativesdk.com/2015/02/creative-sdk-ios-v0-8-released/[version 0.8]
+
+# What changed
+
+* this
+* that
+** more
+** even more
+* now what
+
+# Download module
+
+# Source on Github
