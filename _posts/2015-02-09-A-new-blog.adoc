@@ -1,11 +1,10 @@
 # A new blog
 :hp-tags: blog
-:published_date: 2015-02-10
 
 So this works!
 
 This blog runs on GitHub pages using the awesome repo HubPress.footnote:[https://github.com/HubPress/hubpress.io]. I (Steven van Loef) will be writing about the things I work on. As a freelance PHP and JavaScript developer I tend to write a lot of code :) I have developed in other languages as well, like C, ObjectiveC, Cobol, Basic, Pascal, Z80 assembly.footnote:[http://en.wikipedia.org/wiki/Zilog_Z80]. But these days I mostly code in PHP and JavaScript and some ObjectiveC to extend Appcelerator.
 
-On this blog I hope to share some of my code (snippets) and other technical write ups that can be useful to others. The first article after this one will be about an iOS module I wrote for the Appcelerator.footnote:[http://www.appcelerator.com] platform. I use Appcelerator for creating iOS apps. Most code is written in JavaScript, but the end result is a native iOS app (or Android and other mobile platforms). You can also expect me to write about the CakePHP.footnote:[http://cakephp.org] framework. I have been using CakePHP since 2006 and still use it for most projects.
+On this blog I hope to share some of my code (snippets) and other technical write ups that can be useful to others. The http://blog.vanloef.com/2015/02/10/Nimbuslabel-module-for-Appcelerator.html[first article] after this one will be about an iOS module I wrote for the Appcelerator.footnote:[http://www.appcelerator.com] platform. I use Appcelerator for creating iOS apps. Most code is written in JavaScript, but the end result is a native iOS app (or Android and other mobile platforms). You can also expect me to write about the CakePHP.footnote:[http://cakephp.org] framework. I have been using CakePHP since 2006 and still use it for most projects.
 
 I hope you enjoy what you read here and find it useful.
