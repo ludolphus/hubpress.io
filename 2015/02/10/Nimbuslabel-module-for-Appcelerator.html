@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <title>Nimbuslabel module for Appcelerator</title>
+    <meta name="description" content="" />
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="shortcut icon" href="http://blog.vanloef.com/themes/ichi/favicon.ico">
+
+    <script type="text/javascript" src="http://blog.vanloef.com/themes/ichi/assets/js/vendor/fastclick.js?v=1.0.0"></script>
+    <script type="text/javascript" src="http://blog.vanloef.com/themes/ichi/assets/js/vendor/modernizr.js?v=1.0.0"></script>
+
+
+    <link rel="stylesheet" type="text/css" href="http://blog.vanloef.com/themes/ichi/assets/css/normalize.css?v=1.0.0" />
+    <link rel="stylesheet" type="text/css" href="http://blog.vanloef.com/themes/ichi/assets/css/foundation.min.css?v=1.0.0" />
+    <!--[if lte IE 8]>
+        <link rel="stylesheet" type="text/css" href="http://blog.vanloef.com/themes/ichi/assets/css/outdatedBrowser.min.css?v=1.0.0">
+    <![endif]-->
+    <link rel="stylesheet" type="text/css" href="http://blog.vanloef.com/themes/ichi/assets/fonts/foundation-icons/foundation-icons.css?v=1.0.0" />
+    <link rel="stylesheet" type="text/css" href="http://blog.vanloef.com/themes/ichi/assets/css/styles.css?v=1.0.0" />
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Open+Sans:300,700,400|Source+Sans+Pro:300,400,600,700,900,300italic,400italic,600italic,700italic,900italic" />
+
+    <link rel="canonical" href="http://blog.vanloef.com/2015/02/10/Nimbuslabel-module-for-Appcelerator.html" />
+    
+    <meta property="og:site_name" content="Steven van Loef" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Nimbuslabel module for Appcelerator" />
+    <meta property="og:description" content="Using rich labels in Appcelerator apps has always been a challenge. Basically you had to fall back to using a webview to use html/css to style text. This has a very big downside: memory usage. There are several modules..." />
+    <meta property="og:url" content="http://blog.vanloef.com/2015/02/10/Nimbuslabel-module-for-Appcelerator.html" />
+    <meta property="article:published_time" content="2015-02-09T23:00:00.000Z" />
+    <meta property="article:modified_time" content="2015-02-10T17:18:04.865Z" />
+    <meta property="article:tag" content="label" />
+    <meta property="article:tag" content="appcelerator" />
+    <meta property="article:tag" content="module" />
+    
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Nimbuslabel module for Appcelerator" />
+    <meta name="twitter:description" content="Using rich labels in Appcelerator apps has always been a challenge. Basically you had to fall back to using a webview to use html/css to style text. This has a very big downside: memory usage. There are several modules..." />
+    <meta name="twitter:url" content="http://blog.vanloef.com/2015/02/10/Nimbuslabel-module-for-Appcelerator.html" />
+    
+    <script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "Article",
+    "publisher": "Steven van Loef",
+    "author": {
+        "@type": "Person",
+        "name": "Steven van Loef",
+        "image": "https://avatars.githubusercontent.com/u/137521?v=3",
+        "url": "undefined/author/undefined",
+        "sameAs": "http://www.vanloef.com/"
+    },
+    "headline": "Nimbuslabel module for Appcelerator",
+    "url": "http://blog.vanloef.com/2015/02/10/Nimbuslabel-module-for-Appcelerator.html",
+    "datePublished": "2015-02-09T23:00:00.000Z",
+    "dateModified": "2015-02-10T17:18:04.865Z",
+    "keywords": "label, appcelerator, module",
+    "description": "Using rich labels in Appcelerator apps has always been a challenge. Basically you had to fall back to using a webview to use html/css to style text. This has a very big downside: memory usage. There are several modules..."
+}
+    </script>
+
+    <meta name="generator" content="Ghost ?" />
+    <link rel="alternate" type="application/rss+xml" title="Steven van Loef" href="http://blog.vanloef.com/rss" />
+</head>
+<body class="post-template tag-undefined tag-undefined tag-undefined">
+
+<div id="outdated">
+    <h6>Your browser is out-of-date!</h6>
+    <p>Update your browser to view this website correctly. <a id="btnUpdate" href="http://outdatedbrowser.com/">Update my browser now</a></p>
+</div>
+
+<nav class="top-bar hide-for-large-up" data-topbar >
+  <ul class="title-area">
+    <li class="name">
+
+    </li>
+    <li class="home"><a class="fi-home" href="http://blog.vanloef.com"></a></li>
+    <li class="toggle-topbar"><a href="#" id="trigger-overlay" class="fi-list"></a></li>
+  </ul>
+
+<div class="overlay overlay-scale">
+    <button type="button" class="overlay-close">Close</button>
+    <nav>
+        <ul>
+            <li><a href="http://blog.vanloef.com">Home</a></li>
+        </ul>
+    </nav>
+</div>
+
+</nav>
+
+<div class="row">
+
+<div class="small-16 medium-16 large-4 columns right head-area" >
+
+<header class="site-head">
+    <div class="vertical">
+        <div class="site-head-content inner">
+            <ul class="side-nav blog-menu show-for-large-up">
+                <li><a class="fi-home" href="http://blog.vanloef.com"></a></li>
+                <li><a class="fi-torso" href="http://blog.vanloef.com/about"></a></li>
+                <li><a class="fi-mail" href="http://blog.vanloef.com/contact"></a></li>
+            </ul>
+            <a class="blog-logo" href="http://blog.vanloef.com"><img alt="Steven van Loef" src="http://www.yellowdice.nl/img/Steven van Loef.jpg" alt="Blog Logo" /></a>
+            <h1 class="blog-title">Steven van Loef</h1>
+            <hr>
+            <p class="blog-description">I am a freelance software developer specialized in PHP and JavaScript. Located in the Netherlands, can work on location in the country and remotely elsewhere.
+
+Available for freelance PHP development and freelance iOS development.</p>
+            <div class="blog-network">
+<!--                 <a href="#" class="fi-social-pinterest"></a>
+                <a href="#" class="fi-social-linkedin"></a>
+                <a href="#" class="fi-social-behance"></a>
+                <a href="#" class="fi-social-deviant-art"></a>
+                <a href="#" class="fi-social-dribbble"></a>
+                <a href="#" class="fi-social-flickr"></a>
+                <a href="#" class="fi-social-github"></a>
+                <a href="#" class="fi-social-skype"></a>
+                <a href="#" class="fi-social-snapchat"></a>
+                <a href="#" class="fi-social-steam"></a>
+                <a href="#" class="fi-social-xbox"></a>
+                <a href="#" class="fi-social-reddit"></a> -->
+                  <a href="https://github.com/ludolphus/" class="fi-social-github"></a>
+                  <a href="https://twitter.com/ludolphus" class="fi-social-twitter"></a>
+            </div>
+        </div>
+    </div>
+</header>
+
+</div>
+
+
+<div class="small-16 medium-16 large-12 columns main-column left">
+    
+
+<main class="content" role="main">
+
+    <article class="post tag-undefined tag-undefined tag-undefined">
+
+
+            <h1 class="post-title">Nimbuslabel module for Appcelerator</h1>
+
+            <span class="post-meta label"><time datetime="2015-02-10">10 Feb 2015</time></span>
+
+            <section class="post-content">
+                <div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>Using rich labels in Appcelerator apps has always been a challenge. Basically you had to fall back to using a webview to use html/css to style text. This has a very big downside: memory usage. There are several modules that address this problem and now (since SDK 3.2) also Appcelerator has a solution with <a href="http://docs.appcelerator.com/platform/latest/#!/api/Titanium.UI.iOS.AttributedString">attributed strings</a>. However, all of these modules and the native attributed label solutions did not meet the demands I had.</p>
+</div>
+<hr>
+<div class="paragraph">
+<p>A search for native iOS solutions lead to the <a href="http://nimbuskit.info/">NimbusKit framework</a>. Part of NimbusKit is an attributed label implementation. It has features to mark ranges of text to have a color and/or link. Taps on links are handled.</p>
+</div>
+<div class="paragraph">
+<p>Still the Nimbus attributed label has some missing features. The first one is detecting a tap&amp;hold (longpress) on links. The second missing feature is passing the tap coordinates to the calling code.</p>
+</div>
+<div class="paragraph">
+<p>I decided to create an Appcelerator module based on the Nimbus attributed label code anyway and add the two missing featuers.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_the_problem_with_appcelerator_attributed_strings">The problem with Appcelerator attributed strings</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Although the implementation that comes with Appcelerator for attributed strings works for simple tasks where just a few text labels need styling. Building an app that uses styled labels in a tableview/listview (think Twitter like lists of posts) is where the problems start. Because (dynamic) tableviews are just too slow I will only go into using listviews with templates. And listview templates is where the problem starts if you want to use labels with attributed strings. A simplified piece of code from the appcelerator documentation:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-javascript" data-lang="javascript">var attr = Titanium.UI.iOS.createAttributedString({ <i class="conum" data-value="1"></i><b>(1)</b>
+    text: text,
+    attributes: [
+        // Underlines text
+        {
+            type: Titanium.UI.iOS.ATTRIBUTE_UNDERLINES_STYLE,
+            value: Titanium.UI.iOS.ATTRIBUTE_UNDERLINE_STYLE_SINGLE,
+            range: [0, text.length]
+        },
+        // Sets a background color
+        {
+            type: Titanium.UI.iOS.ATTRIBUTE_BACKGROUND_COLOR,
+            value: "red",
+            range: [text.indexOf('Appcelerator'), ('Appcelerator').length]
+        },
+        {
+            type: Titanium.UI.iOS.ATTRIBUTE_BACKGROUND_COLOR,
+            value: "blue",
+            range: [text.indexOf('Titanium'), ('Titanium').length]
+        },
+        {
+            type: Titanium.UI.iOS.ATTRIBUTE_BACKGROUND_COLOR,
+            value: "yellow",
+            range: [text.indexOf('rocks!'), ('rocks!').length]
+        },
+        // Sets a foreground color
+        {
+            type: Titanium.UI.iOS.ATTRIBUTE_FOREGROUND_COLOR,
+            value: "orange",
+            range: [0,  text.length]
+        },
+        {
+            type: Titanium.UI.iOS.ATTRIBUTE_FOREGROUND_COLOR,
+            value: "black",
+            range: [text.indexOf('rocks!'), ('rocks!').length]
+        }
+    ]
+});
+
+var label = Titanium.UI.createLabel({ <i class="conum" data-value="2"></i><b>(2)</b>
+    left: 20,
+    right: 20,
+    height: Titanium.UI.SIZE,
+    attributedString: attr <i class="conum" data-value="3"></i><b>(3)</b>
+});</code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>first create an attributed string</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>create a label</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="3"></i><b>3</b></td>
+<td>assign the attributed string created earlier to the label</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>You might notice the problem already: you have to create the attributed string before it can be used in a label. When using listviews with templates this is not possible (well it is but it defeats the reason why listviews were added in the first place: speed).</p>
+</div>
+<div class="paragraph">
+<p>Another problem (for me) with attributed strings is that links are always underlined and blue. Also, only a <a href="http://docs.appcelerator.com/platform/latest/#!/api/Titanium.UI.iOS-property-ATTRIBUTE_LINK">longpress</a> is possible with attributed strings, no single taps.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_the_solution_with_nimbuslabel_module">The solution with nimbuslabel module</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>By updating and adding a little to the nimbuslabel code I was able to overcome the issues mentioned above. You only have to create one object, therefor it can be used in listview templates. It has has both click and longpress events (although I did name those singletap and tapandhold). And links can have any color you like.</p>
+</div>
+<div class="paragraph">
+<p>Sample code for a template using nimbuslabel:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>// a simple template
+
+var templatePost = {
+  properties: {
+    height: Ti.UI.SIZE,
+    selectionStyle: Ti.UI.iPhone.ListViewCellSelectionStyle.NONE,
+  },
+  childTemplates: [
+  {
+      type: 'NimbusLabelLabel',
+      bindId: 'textlabel',
+      properties: {
+        type: 'textlabel',
+        width:Ti.UI.FILL,
+        height:Ti.UI.SIZE,
+        touchEnabled: true,
+        bubbleParent: false,
+      },
+      events: {
+        singletap: yourSingletapCallback,
+        tapandhold: yourLongpressCallback,
+      },
+    }
+  ]
+};
+
+// code to push a row in the listview
+var row = {
+  itemId: id,
+  postcontent: {
+    attributedText: {text: posttext, attributes: attributes},
+    highlightedLinkBackgroundColor: Instance.UI.colors.barColor,
+  }
+};</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_download">Download</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The nimbuslabel module is available on my <a href="https://github.com/ludolphus/Nimbuslabel">github</a>. Check the dist folder for a pre-compiled verison of the module.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_apps_using_the_appcelerator_nimbuslabel_module">Apps using the Appcelerator nimbuslabel module</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><a href="https://itunes.apple.com/us/app/chimp-app.net-client-includes/id619961141?mt=8">Chimp</a></p>
+</div>
+<div class="paragraph">
+<p><a href="https://itunes.apple.com/us/app/filez-file-manager-for-your/id663233773?mt=8">FileZ</a></p>
+</div>
+<div class="paragraph">
+<p><strong>your app here</strong></p>
+</div>
+</div>
+</div>
+                        <aside class="tags fi-pricetag-multiple">Posted on <a href="http://blog.vanloef.com/tag/label">label</a>, <a href="http://blog.vanloef.com/tag/appcelerator">appcelerator</a>, <a href="http://blog.vanloef.com/tag/module">module</a></aside>
+            </section>
+            <hr>
+            <footer class="post-footer">
+
+                <section class="share">
+                    <h4>Liked this post ? Share it.</h4>
+                    <a class="fi-social-facebook" href="https://www.facebook.com/sharer/sharer.php?u=http://blog.vanloef.com/2015/02/10/Nimbuslabel-module-for-Appcelerator.html"
+                        onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+                    </a>
+                    <a class="fi-social-twitter" href="https://twitter.com/share?text=Nimbuslabel%20module%20for%20Appcelerator&amp;url=http://blog.vanloef.com/2015/02/10/Nimbuslabel-module-for-Appcelerator.html"
+                        onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                    </a>
+                    <a class="fi-social-google-plus" href="https://plus.google.com/share?url=http://blog.vanloef.com/2015/02/10/Nimbuslabel-module-for-Appcelerator.html"
+                       onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+                    </a>
+                </section>
+
+                <section class="author">
+                    <header>
+                        <span>About the author</span>
+                    </header>
+                    <section>
+                        <h4>Steven van Loef</h4>
+                        <img src="https://avatars.githubusercontent.com/u/137521?v=3">
+                        <span>The Netherlands</span>
+                        <a href="http://www.vanloef.com/">http://www.vanloef.com/</a>
+                    </section>
+                    <footer>
+                         <p></p>
+                    </footer>
+                </section>
+
+        <div class="clearfix"></div>
+                    <hr>
+
+            </footer>
+
+        <h3 class="title-disqus"><span class="fi-comments"></span>Discussions</h3>
+
+
+
+
+        <section class="post-comments">
+          <div id="disqus_thread"></div>
+          <script type="text/javascript">
+          var disqus_shortname = 'ludolphus'; // required: replace example with your forum shortname
+          /* * * DON'T EDIT BELOW THIS LINE * * */
+          (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+          })();
+          </script>
+          <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+          <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+        </section>
+
+
+    </article>
+
+</main>
+
+</div>
+
+</div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js?v="></script>
+
+    <!--[if lte IE 8]>
+        <script type="text/javascript" src="http://blog.vanloef.com/themes/ichi/assets/js/outdatedBrowser.min.js?v=1.0.0"></script>
+    <![endif]-->
+    <script type="text/javascript" src="http://blog.vanloef.com/themes/ichi/assets/js/min/built.js?v=1.0.0"></script>
+
+    <script>
+      $(document).foundation();
+    </script>
+
+</body>
+</html>
